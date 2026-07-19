@@ -1,0 +1,37 @@
+product of subarray except itself
+with prefix and suffix array
+
+l=list(map(int,input().split()))
+n=len(l)
+p=[0]*n
+s=[0]*n
+ans=[0]*n
+pr=1
+for i in range(n):
+    pr*=l[i]
+    p[i]=pr
+pr=1
+for i in range(n-1,-1,-1):
+    pr*=l[i]
+    s[i]=pr
+ans[0]=s[1]
+ans[n-1]=p[n-2]
+for i in range(1,n-1):
+    ans[i]=p[i-1]*s[i+1]
+print(ans)
+
+
+product of array except itself optimal 
+
+l=list(map(int,input().split()))
+n=len(l)
+ans=[1]*n
+pr=1
+for i in range(n):
+    ans[i]=pr
+    pr*=l[i]
+pr=1
+for i in range(n-1,-1,-1):
+    ans[i]*=pr
+    pr*=l[i]
+print(ans)

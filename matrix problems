@@ -28,6 +28,20 @@ while sr<=er and sc<=ec:
             ans.append(mat[i][sc])
         sc+=1
 print(mat)
+
+
+90 degree matrix rotate
+
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        n=len(matrix)
+        for i in range(n):
+            for j in range(i+1):
+                if i!=j:
+                    matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]
+        for i in range(n):
+            matrix[i]=matrix[i][::-1]
+        
 print(ans)
             
         
